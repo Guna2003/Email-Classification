@@ -51,14 +51,14 @@ This project is a web-based application designed to help customer support teams 
 ## 🧪 Sample Input
 -json
 
-{
+-{
   "email_text": "Hi, my name is John Doe. My email is john.doe@example.com. Please check the billing error."
 }
 
 ## 📤 Sample Output
 -json
 
-{
+-{
   "category": "Billing",
   "masked_text": "Hi, my name is [NAME]. My email is [EMAIL]. Please check the billing error.",
   "entities": [
