@@ -48,6 +48,36 @@ This project is a web-based application designed to help customer support teams 
 6. masked_text — email with PII replaced
 7. entities — list of detected PII with type and position
 
+## 🧪 Sample Input
+-json
+
+{
+  "email_text": "Hi, my name is John Doe. My email is john.doe@example.com. Please check the billing error."
+}
+
+## 📤 Sample Output
+-json
+
+{
+  "category": "Billing",
+  "masked_text": "Hi, my name is [NAME]. My email is [EMAIL]. Please check the billing error.",
+  "entities": [
+    {
+      "label": "EMAIL",
+      "entity": "john.doe@example.com",
+      "start": 30,
+      "end": 50
+    },
+    {
+      "label": "NAME",
+      "entity": "John Doe",
+      "start": 17,
+      "end": 25
+    }
+  ]
+}
+
+
 
 
 
