@@ -35,10 +35,10 @@ email_classification/ │ ├── app.py # Main Flask application ├── mo
 1. **Clone the repository**
 2. **Create and activate a virtual environment**
 3. **Install dependencies:**
+4. **pip install -r dependies:**
+5. **python app.py**
+6. **http://127.0.0.1:500**
 
-   ```bash
-   pip install -r requirements.txt
-python app.py
-http://127.0.0.1:5000
+
 
 
