@@ -1,12 +1,23 @@
-from flask import Flask, request, render_template
-import joblib
-from utils import mask_pii
 import os
+import gdown
+import joblib
+from flask import Flask, request, render_template
+from utils import mask_pii
 
 app = Flask(__name__)
 
-# Load model from root
-model_path = os.path.join(os.getcwd(), 'email_classifier.pkl')
+# Google Drive file ID for the model
+file_id = '1Ds0FbGNO30S3e8F3GZIG_LOCEie5dqy0'  # Replace this with your actual Google Drive file ID
+model_path = 'email_classifier.pkl'
+
+# Check if the model exists in the local directory; if not, download it
+if not os.path.exists(model_path):
+    print("Downloading model from Google Drive...")
+    gdown.download(f'https://drive.google.com/uc?export=download&id={file_id}', model_path, quiet=False)
+else:
+    print("Model file already exists!")
+
+# Load model from the root
 email_classifier_model = joblib.load(model_path)
 
 @app.route('/')

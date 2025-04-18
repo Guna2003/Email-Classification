@@ -1,6 +1,8 @@
+email_classifier.pkl
 *.pkl
 *.joblib
 __pycache__/
 venv/
 *.log
 .DS_Store
+.vercel
