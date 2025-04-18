@@ -40,13 +40,13 @@ This project is a web-based application designed to help customer support teams 
 
 ## 📡 API Endpoint
 
-URL: /classify_email
-Method: POST
-Input: email_text (sent as JSON or form data)
-Response: JSON containing:
-category — predicted category
-masked_text — email with PII replaced
-entities — list of detected PII with type and position
+1. URL: /classify_email
+2. Method: POST
+3. Input: email_text (sent as JSON or form data)
+4. Response: JSON containing:
+5. category — predicted category
+6. masked_text — email with PII replaced
+7. entities — list of detected PII with type and position
 
 
 
