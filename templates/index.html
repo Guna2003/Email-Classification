@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Classification System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f2862;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .output-section {
+            margin-top: 30px;
+        }
+
+        .output-section h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        pre {
+            background: #f7f9fb;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border: 1px solid #ddd;
+        }
+
+        .entity-box {
+            background: #e7f3ff;
+            border-left: 4px solid #007BFF;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+        }
+
+        .entity-box strong {
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Classification System</h1>
+        <form method="POST" action="/process_email">
+            <label for="email_text">Enter Email Text:</label>
+            <textarea name="email_text" required>{{ email_text or '' }}</textarea>
+            <button type="submit">Classify & Mask</button>
+        </form>
+
+        {% if category %}
+        <div class="output-section">
+            <h2>Category:</h2>
+            <pre>{{ category }}</pre>
+        </div>
+        {% endif %}
+
+        {% if masked_text %}
+        <div class="output-section">
+            <h2>Masked Email:</h2>
+            <pre>{{ masked_text | e }}</pre>
+        </div>
+        {% endif %}
+
+        {% if entities %}
+        <div class="output-section">
+            <h2>Detected Entities:</h2>
+            {% for entity in entities %}
+            <div class="entity-box">
+                🔖 <strong>Label:</strong> {{ entity.label }}<br>
+                🔍 <strong>Entity:</strong> {{ entity.entity }}<br>
+                📍 <strong>Position:</strong> Start = {{ entity.start }}, End = {{ entity.end }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
