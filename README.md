@@ -4,7 +4,7 @@ This project is a web-based application designed to help customer support teams 
 
 ---
 
-## 🔧 Features
+## Features
 
 - Classifies emails into predefined categories (e.g., billing, technical support, general query, etc.)
 - Masks PII like emails, phone numbers, names, etc.
@@ -14,7 +14,7 @@ This project is a web-based application designed to help customer support teams 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** HTML, CSS (custom styled)
 - **Backend:** Python, Flask
@@ -29,7 +29,7 @@ This project is a web-based application designed to help customer support teams 
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. **Clone the repository**
 2. **Create and activate a virtual environment**
@@ -38,7 +38,7 @@ This project is a web-based application designed to help customer support teams 
 5. **python app.py**
 6. **http://127.0.0.1:500**
 
-## 📡 API Endpoint
+## API Endpoint
 
 1. URL: /classify_email
 2. Method: POST
@@ -48,14 +48,14 @@ This project is a web-based application designed to help customer support teams 
 6. masked_text — email with PII replaced
 7. entities — list of detected PII with type and position
 
-## 🧪 Sample Input
+## Sample Input
 -json
 
 -{
   "email_text": "Hi, my name is John Doe. My email is john.doe@example.com. Please check the billing error."
 }
 
-## 📤 Sample Output
+## Sample Output
 -json
 
 -{
@@ -76,6 +76,20 @@ This project is a web-based application designed to help customer support teams 
     }
   ]
 }
+
+## Dataset
+1. The dataset used is a CSV file named emails.csv with the following columns:
+2. email: The email content
+3. type: The corresponding category label (e.g., Billing, Technical Support, etc.)
+
+
+## Note on Large Files
+1. If your model file (e.g., email_classifier.pkl) exceeds 100MB, GitHub will block it from being pushed.
+2. You can:
+Use Git LFS to track large files
+3. Or avoid pushing the file and instead load it externally during runtime
+
+
 
 
 
