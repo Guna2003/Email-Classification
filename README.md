@@ -25,4 +25,20 @@ This project is a web-based application designed to help customer support teams 
 ---
 
 ## 📁 Project Structure
+email_classification/ │ ├── app.py # Main Flask application ├── models.py # ML model loading and classification logic ├── utils.py # PII masking and entity extraction logic ├── templates/ │ └── index.html # Frontend HTML template ├── static/ # Optional static files ├── emails.csv # Dataset with email and type columns ├── requirements.txt # Python dependencies └── README.md # Project documentation
+
+
+---
+
+## 🚀 How to Run
+
+1. **Clone the repository**
+2. **Create and activate a virtual environment**
+3. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+python app.py
+http://127.0.0.1:5000
+
 
