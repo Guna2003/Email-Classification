@@ -38,14 +38,20 @@ This project is a web-based application designed to help customer support teams 
 5. **python app.py**
 6. **http://127.0.0.1:500**
 
-## 📡 API Endpoint
-**URL: /classify_email**
-**Method: POST**
-**Input: email_text (as form data or JSON)**
-**Output: JSON response with:**
-**category**
-**masked_text**
-**entities**
+📡 API Endpoint
+URL: /classify_email
+
+Method: POST
+
+Input: email_text (sent as JSON or form data)
+
+Response: JSON containing:
+
+category — predicted category
+
+masked_text — email with PII replaced
+
+entities — list of detected PII with type and position
 
 
 
