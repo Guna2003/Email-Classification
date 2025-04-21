@@ -20,7 +20,16 @@ This project is a web-based application designed to help customer support teams 
 - **Backend:** Python, Flask
 - **NLP & ML:** spaCy, scikit-learn, pandas, re
 - **Model:** Random Forest with TF-IDF pipeline
-- **Deployment:** Flask local server (`http://127.0.0.1:5000`)
+- **Deployment:** Flask local server (`http://127.0.0.1:7860`)
+
+  ## Prerequisites
+
+1. **Python 3.7+**
+2. **Flask**
+3. **spaCy**
+4. **scikit-learn**
+5. **joblib**
+6. **Flask-CORS** (for handling cross-origin requests)
 
 ---
 
