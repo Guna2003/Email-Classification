@@ -1,4 +1,5 @@
 Flask
-gdown
 joblib
-
+gdown
+spacy
+scikit-learn
