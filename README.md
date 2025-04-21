@@ -22,7 +22,7 @@ This project is a web-based application designed to help customer support teams 
 - **Model:** Random Forest with TF-IDF pipeline
 - **Deployment:** Flask local server (`http://127.0.0.1:7860`)
 
-  ## Prerequisites
+## Prerequisites
 
 1. **Python 3.7+**
 2. **Flask**
